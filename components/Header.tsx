@@ -1,21 +1,20 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // @ts-ignore - Suppressing named export errors from react-router-dom due to potential environment type mismatch
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShieldCheck } from 'lucide-react';
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ShieldCheck } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Products', path: '/products' },
-    { name: 'Industries', path: '/industries' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Compliance', path: '/compliance' },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Products", path: "/products" },
+    { name: "Industries", path: "/industries" },
+    { name: "Careers", path: "/careers" },
+    { name: "Compliance", path: "/compliance" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -25,13 +24,22 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="navy-bg p-2 rounded-md">
-                <ShieldCheck className="text-white w-6 h-6" />
+            <Link to="/" className="flex items-center space-x-0.5">
+              <div className=" p-2 rounded-md flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="VTPL Logo"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
+
               <div className="flex flex-col">
-                <span className="text-lg font-bold navy-text leading-tight tracking-tight uppercase">Vikash Techsec</span>
-                <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Private Limited</span>
+                <span className="text-lg font-bold navy-text leading-tight tracking-tight uppercase">
+                  Vikash Techsec
+                </span>
+                <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">
+                  Private Limited
+                </span>
               </div>
             </Link>
           </div>
@@ -43,7 +51,9 @@ const Header: React.FC = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-semibold transition-all hover:text-blue-600 ${
-                  isActive(link.path) ? 'text-blue-600 border-b-2 border-blue-600' : 'navy-text'
+                  isActive(link.path)
+                    ? "text-blue-600 border-b-2 border-blue-600"
+                    : "navy-text"
                 }`}
               >
                 {link.name}
@@ -80,8 +90,8 @@ const Header: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block px-3 py-4 text-base font-bold rounded-md ${
                   isActive(link.path)
-                    ? 'accent-bg text-white'
-                    : 'navy-text hover:bg-slate-50'
+                    ? "accent-bg text-white"
+                    : "navy-text hover:bg-slate-50"
                 }`}
               >
                 {link.name}
