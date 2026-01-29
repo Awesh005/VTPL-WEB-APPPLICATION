@@ -71,9 +71,11 @@ const Header: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="navy-text hover:text-blue-600 focus:outline-none"
+              className="relative flex items-center justify-center w-12 h-12 bg-white shadow-lg rounded-xl text-navy-text hover:text-blue-600 hover:scale-105 transition transform duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {/* Optional subtle pulse effect */}
+              <span className="absolute inset-0 rounded-xl bg-blue-100 opacity-0 hover:opacity-20 transition-opacity duration-300"></span>
             </button>
           </div>
         </div>

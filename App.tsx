@@ -1,9 +1,11 @@
-
-import React, { useState, useEffect } from 'react';
-// @ts-ignore - Suppressing named export errors from react-router-dom due to potential environment type mismatch
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+// @ts-ignore
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PlexusBackground from './components/PlexusBackground';
+import HeroSection from "./components/HeroSection";
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -17,27 +19,43 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow pt-20">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/industries" element={<Industries />} />
-            <Route path="/compliance" element={<Compliance />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-          </Routes>
-        </main>
-        <Footer />
+      <div className="relative flex flex-col min-h-screen bg-[#0B132B] overflow-hidden">
+        
+        {/* 🔹 Plexus sirf Home page par */}
+        <HomePlexusWrapper />
+
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Header />
+
+          <main className="flex-grow pt-20">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/compliance" element={<Compliance />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/careers" element={<Careers />} />
+            </Routes>
+            
+          </main>
+
+          <Footer />
+        </div>
       </div>
     </Router>
   );
 };
 
-// Scroll to top on route change
+/* 🔹 Plexus Background sirf "/" route pe */
+const HomePlexusWrapper = () => {
+  const { pathname } = useLocation();
+  if (pathname !== '/') return null;
+  return <PlexusBackground />;
+};
+
+/* 🔹 Scroll to top on route change */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
