@@ -87,7 +87,7 @@ const About: React.FC = () => {
           <div className="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row items-stretch">
             <div className="md:w-1/3 lg:w-1/4 relative min-h-[400px]">
               <img
-                src="/dist/founder1.png"
+                src="/components/founder1.png"
                 alt="Suraj Seth - Director"
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
 
