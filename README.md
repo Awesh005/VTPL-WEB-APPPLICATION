@@ -1,24 +1,130 @@
-<<<<<<< HEAD
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+# 🚀 VTPL Web Application
+
+### Official Corporate Website for  
+## **Vikash Techsec Private Limited (VTPL)**
+
+A modern, fast, and responsive web application built to represent VTPL’s digital presence with a clean UI and structured content.
+
+🌐 **Live Website**  
+👉 https://vtpl-web-appplication.vercel.app
+
+---
+
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strongly%20Typed-blue)
+![Vite](https://img.shields.io/badge/Vite-Fast-yellow)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
+![Status](https://img.shields.io/badge/Status-Live-success)
+
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 📌 About the Project
 
-View your app in AI Studio: https://ai.studio/apps/drive/1rTr4OquWE8Zo73oLiRk0igUeucUAVMLC
+The **VTPL Web Application** is a professional corporate website developed for **Vikash Techsec Private Limited**.  
+It provides a structured overview of the company’s:
 
-## Run Locally
+- Services
+- Products
+- Industries served
+- Compliance standards
+- Career opportunities
+- Contact details
 
-**Prerequisites:**  Node.js
+The application focuses on **performance**, **accessibility**, and **modern UI standards**.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-=======
-# VTPL-WEB-APPPLICATION
->>>>>>> ec98d26e560fb996a75aa5437e7fa7983fb45e1c
+## ✨ Key Features
+
+- 🎨 Modern & professional UI design
+- ⚡ Lightning-fast performance using Vite
+- 📱 Fully responsive (Mobile, Tablet & Desktop)
+- 🧩 Modular & reusable React components
+- 🧭 Clean multi-page navigation
+- 🔍 SEO-friendly structure
+- 🛡️ Scalable TypeScript architecture
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technology |
+|--------|------------|
+| Frontend | React 18 |
+| Language | TypeScript |
+| Build Tool | Vite |
+| Styling | CSS |
+| Deployment | Vercel |
+| Version Control | Git & GitHub |
+
+---
+
+## 📂 Project Structure
+
+vtpl-web-application/
+│
+├── components/
+│ ├── Header.tsx
+│ └── Footer.tsx
+│
+├── pages/
+│ ├── Home.tsx
+│ ├── About.tsx
+│ ├── Services.tsx
+│ ├── Products.tsx
+│ ├── Industries.tsx
+│ ├── Careers.tsx
+│ ├── Compliance.tsx
+│ └── Contact.tsx
+│
+├── App.tsx
+├── index.tsx
+├── index.html
+├── metadata.json
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+
+---
+
+## 🚀 Getting Started (Local Setup)
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Awesh005/VTPL-WEB-APPPLICATION.git
+2️⃣ Navigate to Project Directory
+cd VTPL-WEB-APPPLICATION
+3️⃣ Install Dependencies
+npm install
+4️⃣ Start Development Server
+npm run dev
+📍 App will run at:
+
+http://localhost:5173
+🌍 Deployment
+This application is deployed using Vercel for fast global delivery.
+
+🔗 Live URL
+https://vtpl-web-appplication.vercel.app
+
+📸 Screenshots (Optional)
+You can add screenshots like this:
+
+![Home Page](./screenshots/home.png)
+![Services Page](./screenshots/services.png)
+🔮 Future Enhancements
+🌐 Admin Dashboard
+
+📩 Contact Form with Backend API
+
+🔐 Authentication (Admin Panel)
+
+📊 Analytics Integration
+
+🌙 Dark Mode
