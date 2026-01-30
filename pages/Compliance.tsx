@@ -141,7 +141,7 @@ const logos = [
   '/images/PeopleLink.png',
   '/images/promark.png',
   '/images/solitire.png',
-  '/images/zakai.png',
+  '/images/zakai.jpg',
   '/images/bpe.jfif',
   '/images/hlbs.jfif',
 ];
