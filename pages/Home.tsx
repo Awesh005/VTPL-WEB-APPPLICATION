@@ -29,10 +29,10 @@ const Home: React.FC = () => {
               <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">Reliability • Security • Technology</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-[1.15] mb-8">
-              Trusted Technology & Security Solutions Partner
+            End-to-End IT Hardware & Technology Solutions Partner
             </h1>
             <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl font-medium">
-              Empowering Government, PSU, and Enterprise sectors with cutting-edge IT infrastructure and advanced surveillance systems.
+            Delivering genuine IT hardware products, infrastructure services, and enterprise-grade technology solutions to Government, PSU, and corporate clients.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link to="/contact" className="accent-bg text-white px-10 py-4 rounded-md font-bold flex items-center justify-center hover:bg-blue-700 transition-all shadow-xl group">
