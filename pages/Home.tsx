@@ -150,18 +150,66 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 accent-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to Secure Your Infrastructure?</h2>
-          <p className="text-blue-100 mb-12 text-xl max-w-2xl mx-auto font-medium">
-            Join the numerous government and private organizations that trust Vikash Techsec for their technology needs.
-          </p>
-          <Link to="/contact" className="bg-white text-blue-600 px-12 py-5 rounded-md font-extrabold hover:bg-slate-50 transition-all inline-block shadow-2xl uppercase tracking-wider text-sm">
-            Contact Sales Team
-          </Link>
-        </div>
-      </section>
+{/* Full Width CTA Section with Bottom Animated Gradient Border */}
+<section className="relative w-full overflow-hidden bg-slate-900">
+
+  {/* CTA Content */}
+  <div className="relative py-20 flex items-center justify-center overflow-hidden">
+
+    {/* Background Image */}
+    <div className="absolute inset-0 z-0">
+      <img
+        src="/images/P.jpg"
+        alt="CTA Background"
+        className="w-full h-full object-cover opacity-25"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A]/90 via-[#0B1F3A]/70 to-transparent"></div>
+    </div>
+
+    {/* Content */}
+    <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center text-white">
+      <h2 className="text-3xl md:text-5xl font-bold mb-5">
+        Ready to Secure Your Infrastructure?
+      </h2>
+
+      <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto font-medium">
+        Join the numerous government and private organizations that trust
+        Vikash Techsec for their technology needs.
+      </p>
+
+      <Link
+        to="/contact"
+        className="bg-white text-blue-600 px-10 py-4 rounded-md font-extrabold
+        hover:bg-slate-50 transition-all inline-block shadow-xl uppercase tracking-wider text-sm"
+      >
+        Contact Sales Team
+      </Link>
+    </div>
+  </div>
+
+  {/* Bottom Animated Gradient Border */}
+  <div
+    className="absolute bottom-0 left-0 w-full h-[4px]
+    bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500
+    bg-[length:400%_400%] animate-gradient-border"
+  />
+
+  {/* Animation */}
+  <style>{`
+    @keyframes gradient-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animate-gradient-border {
+      animation: gradient-border 6s ease infinite;
+    }
+  `}</style>
+</section>
+
+
+
     </div>
   );
 };

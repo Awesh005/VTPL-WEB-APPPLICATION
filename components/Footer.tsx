@@ -10,14 +10,27 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="navy-bg text-slate-400 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative text-slate-400 pt-14 pb-6 overflow-hidden">
+
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/L.jpg"   // same banner image or footer-specific image
+          alt="Footer Background"
+          className="w-full h-full object-cover opacity-20"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#0B1F3A]/60"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Company Info */}
-          <div className="space-y-8">
+          <div className="space-y-5">
             <Link to="/" className="flex items-center space-x-3">
               <div className="bg-white p-2 rounded-md">
                 <img
@@ -33,8 +46,8 @@ const Footer: React.FC = () => {
 
             <p className="text-sm leading-relaxed font-medium">
               India-based Private Limited company delivering high-performance
-              technology and security solutions for Government and Enterprise
-              sectors.
+              IT hardware, infrastructure, and technology solutions for
+              Government and Enterprise sectors.
             </p>
 
             <div className="flex space-x-4">
@@ -42,7 +55,7 @@ const Footer: React.FC = () => {
                 href="https://in.linkedin.com/company/vikashtechsecprivatelimited"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 p-2.5 rounded-full hover:bg-blue-600 transition-all"
+                className="bg-white/10 p-2 rounded-full hover:bg-blue-600 transition-all"
               >
                 <Linkedin size={18} className="text-white" />
               </a>
@@ -51,7 +64,7 @@ const Footer: React.FC = () => {
                 href="https://x.com/vtpl_2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 p-2.5 rounded-full hover:bg-blue-600 transition-all"
+                className="bg-white/10 p-2 rounded-full hover:bg-blue-600 transition-all"
               >
                 <Twitter size={18} className="text-white" />
               </a>
@@ -60,8 +73,8 @@ const Footer: React.FC = () => {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-8">Navigation</h3>
-            <ul className="space-y-4 text-sm font-semibold">
+            <h3 className="text-white font-bold text-lg mb-6">Navigation</h3>
+            <ul className="space-y-3 text-sm font-semibold">
               {[
                 "About Us",
                 "Services",
@@ -85,10 +98,10 @@ const Footer: React.FC = () => {
 
           {/* Locations */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-8">
+            <h3 className="text-white font-bold text-lg mb-6">
               Operational Presence
             </h3>
-            <ul className="space-y-5 text-xs font-bold uppercase tracking-widest">
+            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest">
               <li>
                 <span className="text-blue-500 block">Ranchi (HQ)</span>
                 <span className="opacity-70">Jharkhand</span>
@@ -106,13 +119,11 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-8">
+            <h3 className="text-white font-bold text-lg mb-6">
               Official Contact
             </h3>
 
-            <ul className="space-y-6 text-sm">
-
-              {/* Phone */}
+            <ul className="space-y-4 text-sm">
               <li className="flex items-center space-x-4">
                 <Phone className="text-blue-600 w-5 h-5" />
                 <a
@@ -123,7 +134,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
 
-              {/* Admin Email */}
               <li className="flex items-center space-x-4">
                 <Mail className="text-blue-600 w-5 h-5" />
                 <a
@@ -134,7 +144,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
 
-              {/* HR Email */}
               <li className="flex items-center space-x-4">
                 <Mail className="text-blue-600 w-5 h-5" />
                 <a
@@ -145,7 +154,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
 
-              {/* Address */}
               <li className="flex items-start space-x-4">
                 <MapPin className="text-blue-600 w-5 h-5 mt-1" />
                 <span className="text-xs leading-relaxed opacity-70">
@@ -157,9 +165,9 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">
           <p>© 2026 Vikash Techsec Private Limited</p>
-          <div className="mt-4 md:mt-0 flex space-x-8">
+          <div className="mt-3 md:mt-0 flex space-x-8">
             <Link to="/privacy" className="hover:text-white">
               Privacy
             </Link>
