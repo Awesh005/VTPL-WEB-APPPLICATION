@@ -27,7 +27,7 @@ const Header: React.FC = () => {
             <Link to="/" className="flex items-center space-x-0.5">
               <div className=" p-2 rounded-md flex items-center justify-center">
                 <img
-                  src="/logo.png"
+                  src="/images/logo.png"
                   alt="VTPL Logo"
                   className="w-12 h-12 object-contain"
                 />

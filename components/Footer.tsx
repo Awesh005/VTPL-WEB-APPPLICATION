@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <Link to="/" className="flex items-center space-x-2">
               <div className="bg-white p-1.5 sm:p-2 rounded-md flex items-center justify-center">
               <img
-                  src="/logo.png"
+                  src="/images/logo.png"
                   alt="VTPL Logo"
                   className="w-18 h-10 object-contain"
                 />
