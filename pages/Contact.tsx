@@ -53,22 +53,22 @@ ${formState.message}
     {
       city: "Ranchi Hub",
       address: "Saluja Mansion, Sujata Chowk, Ranchi, Jharkhand - 834001",
-      phone: "+91 90651 26999",
-      email: "adminrnc@vtpl.org.in",
+      phone: <a href="tel:+919065126999">+91 90651 26999</a>,
+      email: <a href="mailto:adminrnc@vtpl.org.in">adminrnc@vtpl.org.in</a>,
       isMain: true,
     },
     {
       city: "Patna Office",
       address: "Boring Road, Patna, Bihar - 800001",
-      phone: "+91 90652 12999",
-      email: "salespatna@vtpl.org.in",
+      phone: <a href="tel:+919065212999">+91 90652 12999</a>,
+      email: <a href="mailto:salespatna@vtpl.org.in">salespatna@vtpl.org.in</a>,
       isMain: false,
     },
     {
       city: "Kolkata Hub",
       address: "A J C Bose Road, Kolkata, West Bengal - 700017",
-      phone: "+91 90651 04999",
-      email: "kolsales@vtpl.org.in",
+      phone: <a href="tel:+919065104999">+91 90651 04999</a>,
+      email: <a href="mailto:kolsales@vtpl.org.in">kolsales@vtpl.org.in</a>,
       isMain: false,
     },
   ];
