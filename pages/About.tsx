@@ -201,21 +201,48 @@ const About: React.FC = () => {
   );
 };
 
-const ValueCard: React.FC<{
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}> = ({ icon, title, desc }) => (
-  <div className="p-8 text-center bg-slate-50 rounded-xl hover:shadow-lg transition-all border border-transparent hover:border-slate-200">
-    <div className="flex justify-center mb-6">
-      <div className="p-4 bg-white rounded-full shadow-sm">
-        {/* Fixed: Casting icon to any to allow the 'size' prop which is not correctly inferred on generic ReactElement in this environment */}
-        {React.cloneElement(icon as any, { size: 32 })}
+/* =======================
+   UPDATED VALUE CARD
+   ======================= */
+   const ValueCard: React.FC<{
+    icon: React.ReactNode;
+    title: string;
+    desc: string;
+  }> = ({ icon, title, desc }) => (
+    <div
+      className="
+        bg-slate-50 p-8 rounded-xl text-center
+        border border-slate-200
+        hover:border-blue-600
+        hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]
+        transition-all duration-300
+        relative overflow-hidden group
+      "
+    >
+      {/* Icon */}
+      <div className="flex justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+        <div className="p-4 bg-white rounded-full shadow-sm">
+          {React.cloneElement(icon as any, { size: 32 })}
+        </div>
       </div>
+  
+      {/* Title */}
+      <h4 className="text-xl font-bold navy-text mb-3">{title}</h4>
+  
+      {/* Description */}
+      <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+  
+      {/* Bottom Gradient Border (same as ServiceCard) */}
+      <div
+        className="
+          absolute bottom-0 left-0 w-full h-1
+          bg-gradient-to-r from-green-400 via-purple-400 to-blue-500
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-300
+        "
+      />
     </div>
-    <h4 className="text-xl font-bold navy-text mb-3">{title}</h4>
-    <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
-  </div>
-);
-
-export default About;
+  );
+  
+  export default About;
+  
