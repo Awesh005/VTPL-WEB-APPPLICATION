@@ -215,13 +215,42 @@ const Home: React.FC = () => {
 };
 
 const ServiceCard: React.FC<{icon: React.ReactNode, title: string, desc: string}> = ({icon, title, desc}) => (
-  <div className="bg-white p-10 rounded-xl border border-grey hover:border-blue-600 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all group cursor-default">
-    <div className="text-blue-600 mb-8 transition-transform group-hover:scale-110">
-      {icon}
-    </div>
-    <h3 className="text-xl font-bold navy-text mb-4">{title}</h3>
-    <p className="text-slate-500 leading-relaxed font-medium text-sm">{desc}</p>
+  <div
+  className="
+    bg-white p-10 rounded-xl border border-slate-200
+    hover:border-blue-600
+    hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]
+    transition-all duration-300
+    group cursor-default
+    relative overflow-hidden
+  "
+>
+  
+
+  {/* Icon */}
+  <div className="text-blue-600 mb-8 transition-transform duration-300 group-hover:scale-110">
+    {icon}
   </div>
+
+  {/* Title */}
+  <h3 className="text-xl font-bold navy-text mb-4">
+    {title}
+  </h3>
+
+  {/* Description */}
+  <p className="text-slate-500 leading-relaxed font-medium text-sm">
+    {desc}
+  </p>
+
+  {/* Bottom Glow on Hover */}
+  <div className="
+    absolute bottom-0 left-0 w-full h-1
+    bg-gradient-to-r from-green-400 via-purple-400 to-blue-500
+    opacity-0 group-hover:opacity-100
+    transition-opacity duration-300
+  " />
+</div>
+
 );
 
 export default Home;
