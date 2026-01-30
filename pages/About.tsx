@@ -34,11 +34,7 @@ const About: React.FC = () => {
                 </p>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                Vikash Techsec Private Limited (CIN: U74999BR2019PTC043689) was
-                incorporated with a vision to provide state-of-the-art security
-                and IT solutions. Since our founding on October 11, 2019, our{" "}
-                <strong>Main Branch</strong> and operational headquarters are
-                situated in <strong>Ranchi, Jharkhand</strong>.
+                Vikash Techsec Private Limited (CIN: U74999BR2019PTC043689) was incorporated with the vision of providing state-of-the-art security and IT solutions. Since its founding on October 11, 2019 , the company’s headquarters and operational center have been located in <strong>Ranchi, Jharkhand</strong>.
               </p>
               <p className="text-slate-600 leading-relaxed">
                 To better serve the Eastern Indian region, we maintain an office
@@ -55,11 +51,11 @@ const About: React.FC = () => {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-3xl accent-blue">Ranchi</h4>
-                  <p className="text-sm text-slate-500 uppercase tracking-widest font-medium">
-                    Main Branch
-                  </p>
-                </div>
+  <h4 className="font-bold text-3xl accent-blue">Ranchi</h4>
+  <p className="text-sm text-slate-500 tracking-widest font-medium">
+    Headquarter
+  </p>
+</div>
               </div>
             </div>
             <div className="bg-slate-100 rounded-3xl overflow-hidden shadow-xl">
