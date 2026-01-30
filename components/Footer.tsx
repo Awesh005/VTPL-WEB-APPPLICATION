@@ -19,16 +19,10 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <Link to="/" className="flex items-center space-x-2">
               <div className="bg-white p-1.5 sm:p-2 rounded-md flex items-center justify-center">
-                <img
-                  src=".\dist\logo.png"
-                  alt="Vikash Techsec Logo"
-                  className="
-                      w-4 h-4 
-                      sm:w-5 sm:h-5
-                      md:w-6 md:h-6
-                      lg:w-7 lg:h-7
-                      object-contain
-                    "
+              <img
+                  src="/logo.png"
+                  alt="VTPL Logo"
+                  className="w-18 h-10 object-contain"
                 />
               </div>
               <span className="text-xl font-bold text-white uppercase tracking-tight">
