@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 <img
                   src="/images/logo.png"
                   alt="VTPL Logo"
-                  className="w-20 h-10 object-contain"
+                  className="w-12 h-10 object-contain"
                 />
               </div>
               <span className="text-lg font-bold text-white uppercase">
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom */}
         <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">
-          <p>© 2019 Vikash Techsec Private Limited</p>
+          <p>© 2026 Vikash Techsec Private Limited</p>
           <div className="mt-4 md:mt-0 flex space-x-8">
             <Link to="/privacy" className="hover:text-white">
               Privacy
