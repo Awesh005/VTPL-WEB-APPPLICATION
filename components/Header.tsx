@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// @ts-ignore - Suppressing named export errors from react-router-dom due to potential environment type mismatch
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,101 +14,112 @@ const Header: React.FC = () => {
     { name: "Industries", path: "/industries" },
     { name: "Careers", path: "/careers" },
     { name: "Compliance", path: "/compliance" },
+    { name: "Contact Us", path: "/contact" }, // now normal item
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-white border-b border-grey shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-0.5">
-              <div className=" p-2 rounded-md flex items-center justify-center">
-                <img
-                  src="/images/logo.png"
-                  alt="VTPL Logo"
-                  className="w-12 h-12 object-contain"
-                />
-              </div>
-
+    <>
+      {/* ================= HEADER ================= */}
+      <nav className="fixed top-0 w-full z-50 bg-white border-b shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20 items-center">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2">
+              <img
+                src="/images/logo.png"
+                alt="VTPL Logo"
+                className="w-12 h-12 object-contain"
+              />
               <div className="flex flex-col">
-                <span className="text-lg font-bold navy-text leading-tight tracking-tight uppercase">
+                <span className="text-lg font-bold navy-text uppercase">
                   Vikash Techsec
                 </span>
-                <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">
+                <span className="text-[10px] text-slate-500 tracking-widest uppercase">
                   Private Limited
                 </span>
               </div>
             </Link>
-          </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`text-sm font-semibold transition-all hover:text-blue-600 ${
-                  isActive(link.path)
-                    ? "text-blue-600 border-b-2 border-blue-600"
-                    : "navy-text"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="accent-bg text-white px-6 py-2.5 rounded-md text-sm font-bold hover:bg-blue-700 transition-all shadow-md"
-            >
-              Contact Us
-            </Link>
-          </div>
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`text-sm font-semibold transition-all hover:text-blue-600 ${
+                    isActive(link.path)
+                      ? "text-blue-600 border-b-2 border-blue-600"
+                      : "navy-text"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+            {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="relative flex items-center justify-center w-12 h-12 bg-white shadow-lg rounded-xl text-navy-text hover:text-blue-600 hover:scale-105 transition transform duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+              onClick={() => setIsOpen(true)}
+              className="md:hidden flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md hover:scale-105 transition"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-              {/* Optional subtle pulse effect */}
-              <span className="absolute inset-0 rounded-xl bg-blue-100 opacity-0 hover:opacity-20 transition-opacity duration-300"></span>
+              <Menu size={26} />
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Nav */}
+      {/* ================= MOBILE OVERLAY ================= */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-grey animate-in slide-in-from-top duration-300">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-4 text-base font-bold rounded-md ${
-                  isActive(link.path)
-                    ? "accent-bg text-white"
-                    : "navy-text hover:bg-slate-50"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block px-3 py-4 text-base font-bold text-blue-600"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
+        <div
+          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
       )}
-    </nav>
+
+      {/* ================= MOBILE SIDEBAR ================= */}
+      <div
+        className={`fixed top-0 right-0 h-full w-1/2 max-w-xs
+        bg-white/90 backdrop-blur-xl shadow-2xl z-50
+        transform transition-transform duration-300
+        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        {/* Close */}
+        <div className="flex justify-end p-4">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition"
+          >
+            <X size={22} />
+          </button>
+        </div>
+
+        {/* Nav Links */}
+        <div className="px-5 space-y-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={`group relative flex items-center px-4 py-3 rounded-lg font-semibold transition-all duration-300
+              ${
+                isActive(link.path)
+                  ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow"
+                  : "navy-text hover:bg-blue-50"
+              }`}
+            >
+              {/* Active indicator */}
+              {isActive(link.path) && (
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-white rounded-full"></span>
+              )}
+
+              <span className="ml-2">{link.name}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 
