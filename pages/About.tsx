@@ -4,14 +4,25 @@ import { Target, Eye, Users, ShieldCheck, Landmark, Quote } from "lucide-react";
 const About: React.FC = () => {
   return (
     <div className="bg-white">
-      {/* Header */}
-      <section className="bg-slate-900 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About the Company
+      {/* ================= HERO ================= */}
+      <section className="relative h-[240px] w-full overflow-hidden flex items-center">
+        {/* Background Image */}
+        <img
+          src="/images/P.jpg"
+          alt="Contact Banner"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#081a30]/95 via-[#0b2545]/85 to-[#0b2545]/50" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          About the Company
           </h1>
-          <p className="text-slate-400 text-lg max-w-3xl">
-            Established in 2019, Vikash Techsec Private Limited is an
+          <p className="text-slate-200 text-lg max-w-2xl leading-relaxed">
+          Established in 2019, Vikash Techsec Private Limited is an
             Indian-registered private limited company focusing on large-scale
             technology deployments and security excellence.
           </p>

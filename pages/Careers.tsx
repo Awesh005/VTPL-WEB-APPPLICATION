@@ -14,13 +14,26 @@ const Careers: React.FC = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Header */}
-      <section className="bg-white py-20 border-b border-grey">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold navy-text mb-6">Join Our Team</h1>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
-            Help us shape the future of technology and security in India. We are looking for driven professionals to join our growing offices.
+      {/* ================= HERO ================= */}
+      <section className="relative h-[240px] w-full overflow-hidden flex items-center">
+        {/* Background Image */}
+        <img
+          src="/images/P.jpg"
+          alt="Contact Banner"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#081a30]/95 via-[#0b2545]/85 to-[#0b2545]/50" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Join Our Team
+          </h1>
+          <p className="text-slate-200 text-lg max-w-2xl leading-relaxed">
+          Help us shape the future of technology and security in India. We are looking for driven professionals to join our growing offices.
           </p>
-          <div className="w-16 h-1 bg-blue-600 mx-auto mt-8 rounded-full"></div>
         </div>
       </section>
 

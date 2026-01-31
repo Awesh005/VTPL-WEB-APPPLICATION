@@ -10,18 +10,28 @@ import {
 const Compliance: React.FC = () => {
   return (
     <div className="bg-white">
-      {/* HERO */}
-      <section className="bg-slate-900 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Compliance & Certifications
+       {/* ================= HERO ================= */}
+       <section className="relative h-[240px] w-full overflow-hidden flex items-center">
+        {/* Background Image */}
+        <img
+          src="/images/P.jpg"
+          alt="Contact Banner"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#081a30]/95 via-[#0b2545]/85 to-[#0b2545]/50" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Compliance & Certifications
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Ensuring credibility and trust through full regulatory transparency and registration.
+          <p className="text-slate-200 text-lg max-w-2xl leading-relaxed">
+          Ensuring credibility and trust through full regulatory transparency and registration.
           </p>
         </div>
       </section>
-
       {/* CONTENT */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4">

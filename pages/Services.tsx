@@ -8,11 +8,25 @@ import {
 const Services: React.FC = () => {
   return (
     <div className="bg-white">
-      <section className="bg-[#0B1F3A] py-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Core Solutions</h1>
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto font-medium">
-            Industrial-grade technology services designed for government tenders and enterprise infrastructure.
+       {/* ================= HERO ================= */}
+       <section className="relative h-[240px] w-full overflow-hidden flex items-center">
+        {/* Background Image */}
+        <img
+          src="/images/P.jpg"
+          alt="Contact Banner"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#081a30]/95 via-[#0b2545]/85 to-[#0b2545]/50" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Our Core Solutions
+          </h1>
+          <p className="text-slate-200 text-lg max-w-2xl leading-relaxed">
+          Industrial-grade technology services designed for government tenders and enterprise infrastructure.
           </p>
         </div>
       </section>
