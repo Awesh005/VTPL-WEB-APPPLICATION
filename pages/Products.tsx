@@ -47,7 +47,13 @@ const productList: Product[] = [
     icon: <Cpu size={26} />,
     image: "/images/heigh desk.webp",
   },
-
+  {
+    id: "aio-pc",
+    name: "All in One PC",
+    description: "Space-saving all-in-one computers with enterprise-grade performance.",
+    icon: <Layout size={26} />,
+    image: "/images/aio.webp",
+  },
   // LAPTOPS
   {
     id: "laptop-entry",
@@ -67,7 +73,7 @@ const productList: Product[] = [
   // INTERACTIVE & DISPLAY
   {
     id: "interactive-panel",
-    name: "Interactive Panels with CPU",
+    name: "Interactive Panels",
     description: "Smart interactive touch panels with integrated CPU for classrooms and boardrooms.",
     icon: <MonitorPlay size={26} />,
     image: "/images/interactive.webp",
@@ -127,7 +133,7 @@ const productList: Product[] = [
   },
   {
     id: "scanner",
-    name: "Scanner (V3)",
+    name: "Scanner",
     description: "High-speed document scanners for digitization projects.",
     icon: <Scan size={26} />,
     image: "/images/sca.jpg",
@@ -145,27 +151,21 @@ const productList: Product[] = [
   // POWER
   {
     id: "ups-line",
-    name: "Line Interactive UPS with AVR (V2)",
+    name: "Line Interactive UPS with AVR",
     description: "Reliable UPS with AVR protection for office and institutional systems.",
     icon: <BatteryCharging size={26} />,
     image: "/images/ups.jpeg",
   },
   {
     id: "ups-online",
-    name: "Online UPS (V2)",
+    name: "Online UPS",
     description: "True online UPS for mission-critical enterprise environments.",
     icon: <BatteryCharging size={26} />,
     image: "/images/online ups.webp",
   },
 
   // OTHERS
-  {
-    id: "aio-pc",
-    name: "All in One PC (V2)",
-    description: "Space-saving all-in-one computers with enterprise-grade performance.",
-    icon: <Layout size={26} />,
-    image: "/images/aio.webp",
-  },
+  
   {
     id: "lectern",
     name: "Electronic Lectern",
