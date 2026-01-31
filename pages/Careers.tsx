@@ -73,7 +73,7 @@ const Careers: React.FC = () => {
             </div>
             
             <a 
-              href="mailto:careers@vtpl.org.in" 
+              href="mailto:hr@vtpl.org" 
               className="navy-bg text-white px-12 py-5 rounded-md font-bold hover:bg-slate-800 transition-all shadow-lg flex items-center shrink-0"
             >
               <Mail className="mr-3 w-5 h-5" />
