@@ -186,6 +186,22 @@ const productList: Product[] = [
   },
 ];
 
+/* ================= OEM LOGOS ================= */
+
+const logos = [
+  "/images/acer.png",
+  "/images/brother.png",
+  "/images/cyberpower.png",
+  "/images/epson.png",
+  "/images/lg.png",
+  "/images/PeopleLink.png",
+  "/images/promark.png",
+  "/images/solitire.png",
+  "/images/zakai.jpg",
+  "/images/bpe.jfif",
+  "/images/hlbs.jfif",
+];
+
 /* ================= PAGE ================= */
 
 const Products: React.FC = () => {
@@ -247,6 +263,16 @@ const Products: React.FC = () => {
         </div>
       )}
 
+      {/* ================= MOVING CAROUSEL ================= */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 mb-10">
+          <h3 className="text-2xl font-bold navy-text text-center">
+            Trusted By & OEM Partners
+          </h3>
+        </div>
+        <MovingCarousel />
+      </section>
+
       {/* ================= CTA ================= */}
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6">
@@ -278,37 +304,65 @@ const Products: React.FC = () => {
 const ProductCard: React.FC<{
   product: Product;
   onImageClick: (img: string) => void;
-}> = ({ product, onImageClick }) => {
-  return (
-    <div className="bg-white rounded-3xl border hover:shadow-2xl transition-all hover:-translate-y-2">
-      <div
-        className="relative h-56 bg-slate-100 flex items-center justify-center cursor-zoom-in"
-        onClick={() => onImageClick(product.image)}
+}> = ({ product, onImageClick }) => (
+  <div className="bg-white rounded-3xl border hover:shadow-2xl transition-all hover:-translate-y-2">
+    <div
+      className="relative h-56 bg-slate-100 flex items-center justify-center cursor-zoom-in"
+      onClick={() => onImageClick(product.image)}
+    >
+      <img
+        src={product.image}
+        alt={product.name}
+        className="max-h-full max-w-full object-contain p-6"
+      />
+      <div className="absolute top-4 right-4 bg-white p-3 rounded-xl text-blue-600 shadow-lg">
+        {product.icon}
+      </div>
+    </div>
+
+    <div className="p-8 flex flex-col">
+      <h3 className="text-lg font-bold mb-3">{product.name}</h3>
+      <p className="text-slate-600 text-sm mb-6">
+        {product.description}
+      </p>
+
+      <Link
+        to="/contact"
+        state={{ productInquiry: product.name }}
+        className="mt-auto text-center py-3 text-sm font-bold rounded-md border hover:bg-blue-600 hover:text-white transition"
       >
-        <img
-          src={product.image}
-          alt={product.name}
-          className="max-h-full max-w-full object-contain p-6"
-        />
-        <div className="absolute top-4 right-4 bg-white p-3 rounded-xl text-blue-600 shadow-lg">
-          {product.icon}
-        </div>
+        Enquire Now
+      </Link>
+    </div>
+  </div>
+);
+
+/* ================= MARQUEE ================= */
+
+const MovingCarousel: React.FC = () => {
+  const items = [...logos, ...logos];
+
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div className="flex w-max animate-marquee">
+        {items.map((logo, index) => (
+          <div
+            key={index}
+            className="mx-12 h-16 w-40 bg-center bg-no-repeat bg-contain opacity-80 hover:opacity-100 transition"
+            style={{ backgroundImage: `url(${logo})` }}
+          />
+        ))}
       </div>
 
-      <div className="p-8 flex flex-col">
-        <h3 className="text-lg font-bold mb-3">{product.name}</h3>
-        <p className="text-slate-600 text-sm mb-6">
-          {product.description}
-        </p>
-
-        <Link
-          to="/contact"
-          state={{ productInquiry: product.name }}
-          className="mt-auto text-center py-3 text-sm font-bold rounded-md border hover:bg-blue-600 hover:text-white transition"
-        >
-          Enquire Now
-        </Link>
-      </div>
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
